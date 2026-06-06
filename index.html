@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="index, follow"> 
+<meta name="googlebot" content="index, follow"> 
+<meta name="bingbot" content="index, follow">
+  <title>Script School | Modern Screenwriting Education</title>
+  <!-- Google Fonts + Simple CSS Reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fafaf9;
+      color: #1a1a1a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* modern minimal header */
+    .hero {
+      padding: 5rem 0 3rem 0;
+      border-bottom: 1px solid #e8e6e3;
+      background: #ffffff;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .badge {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #c47c2e;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      color: #0f172a;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #3f3f46;
+      max-width: 650px;
+      margin-bottom: 2rem;
+    }
+
+    /* link grid — primary site links */
+    .links-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .pill-link {
+      background: #f3f4f6;
+      color: #1f2937;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .pill-link:hover {
+      background: #e5e7eb;
+      border-color: #d1d5db;
+      transform: translateY(-1px);
+    }
+
+    /* section titles */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 3rem 0 1.8rem 0;
+      border-left: 4px solid #c47c2e;
+      padding-left: 1rem;
+    }
+
+    .section-sub {
+      color: #4b5563;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 2rem 0;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid #efebe9;
+    }
+
+    .course-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 36px -12px rgba(0,0,0,0.12);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #c47c2e;
+      background: #fff0e6;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+
+    .course-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .course-detail {
+      font-size: 0.9rem;
+      color: #5b5b66;
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #0f172a;
+      margin: 0.8rem 0;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1f2937;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .card-link:hover {
+      background: #c47c2e;
+    }
+
+    /* article style — modern reading */
+    .article-wrap {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem 2rem 2.5rem 2rem;
+      margin: 2rem 0 3rem 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+      border: 1px solid #f0eeeb;
+    }
+
+    .article-wrap h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .article-wrap h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 1.8rem 0 0.8rem 0;
+    }
+
+    .article-wrap p {
+      margin-bottom: 1rem;
+      color: #2d2e32;
+      line-height: 1.6;
+    }
+
+    .article-wrap ul, .article-wrap ol {
+      margin: 1rem 0 1.2rem 1.8rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .faq-item {
+      background: #f9f9f8;
+      border-radius: 1rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+
+    /* contact row + map */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin: 2rem 0 2rem;
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 2rem;
+      border: 1px solid #efebe9;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info p {
+      margin: 0.75rem 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .map-container {
+      flex: 1;
+      min-height: 280px;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      border-radius: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.8rem;
+      margin: 1rem 0;
+    }
+
+    .social-icon {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e50;
+      transition: color 0.2s;
+    }
+
+    .social-icon:hover {
+      color: #c47c2e;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      margin-top: 4rem;
+      padding: 2rem 0 3rem;
+      text-align: center;
+      color: #6c727f;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      h1 {
+        font-size: 2.4rem;
+      }
+      .hero {
+        padding: 2.5rem 0 2rem;
+      }
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero & main navigation links embedded as inline pills -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="badge">✧ Script School ✧</span>
+      <h1>Modern screenwriting <br>education & mentorship</h1>
+      <p>Learn from industry professionals, finish your script, and build a career in storytelling. Join a creative community designed to elevate your craft.</p>
+      <!-- main website links (Home, courses, etc) -->
+      <div class="links-grid">
+        <a href="https://scriptschool.org/" class="pill-link" target="_blank" rel="noopener">🏠 Home</a>
+        <a href="https://scriptschool.org/courses/" class="pill-link" target="_blank" rel="noopener">📚 Courses</a>
+        <a href="https://scriptschool.org/private-consultations/" class="pill-link" target="_blank" rel="noopener">🎬 Private Consultations</a>
+        <a href="https://scriptschool.org/youth-programs/" class="pill-link" target="_blank" rel="noopener">🌟 Youth Programs</a>
+        <a href="https://scriptschool.org/about-us/" class="pill-link" target="_blank" rel="noopener">📖 About Us</a>
+        <a href="https://scriptschool.org/blog/" class="pill-link" target="_blank" rel="noopener">✍️ Blog</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  
+  <!-- Courses section (cards) -->
+  <div class="section-title">Upcoming courses</div>
+  <div class="cards-grid">
+    <!-- Card 1: Screenwriting 101 -->
+    <div class="course-card">
+      <img class="card-img" src="https://scriptschool.org/wp-content/uploads/2025/08/pexels-ron-lach-8085942-1024x683.jpg" alt="Screenwriting class" loading="lazy">
+      <div class="card-content">
+        <div class="card-badge">Starts February 1st</div>
+        <div class="course-title">Screenwriting 101</div>
+        <div class="course-detail">📅 Weekly Course (3 hours every Saturday)</div>
+        <div class="course-detail">👥 Max eight students - peer to peer learning</div>
+        <div class="course-detail">⏰ Sundays at 9am - 12pm CST</div>
+        <div class="price">$99</div>
+        <a href="https://scriptschool.org/courses/screenwriting-101/" class="card-link" target="_blank" rel="noopener">View Course →</a>
+      </div>
+    </div>
+    <!-- Card 2: Acting Class -->
+    <div class="course-card">
+      <img class="card-img" src="https://scriptschool.org/wp-content/uploads/2026/01/pexels-cottonbro-6877431-1024x683.jpg" alt="Acting class" loading="lazy">
+      <div class="card-content">
+        <div class="card-badge">Starts January 31st</div>
+        <div class="course-title">Acting Class</div>
+        <div class="course-detail">🎭 Four-week Weekly Course (12 hours total)</div>
+        <div class="course-detail">👥 Max eight students - peer to peer learning</div>
+        <div class="course-detail">⏰ Sundays at 4pm - 6pm PST</div>
+        <div class="price">$99</div>
+        <a href="https://scriptschool.org/courses/acting-class/" class="card-link" target="_blank" rel="noopener">View Course →</a>
+      </div>
+    </div>
+    <!-- Card 3: Horror Screenplay Writing -->
+    <div class="course-card">
+      <img class="card-img" src="https://scriptschool.org/wp-content/uploads/2025/08/pexels-cottonbro-5435459-1024x683.jpg" alt="Horror Screenplay" loading="lazy">
+      <div class="card-content">
+        <div class="card-badge">Starts January 28th</div>
+        <div class="course-title">Horror Screenplay Writing</div>
+        <div class="course-detail">🔪 Three-week Weekly Course (9 hours total)</div>
+        <div class="course-detail">👥 Max eight students - peer to peer learning</div>
+        <div class="course-detail">⏰ Wednesdays at 6pm - 8pm PST</div>
+        <div class="price">$299</div>
+        <a href="https://scriptschool.org/courses/horror-movie-screenplay-writing/" class="card-link" target="_blank" rel="noopener">View Course →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Extra category: Additional Screenwriting & Industry resources (embedded mini links)  -->
+  <div class="section-title">Explore training & mentorship</div>
+  <div class="links-grid" style="margin-bottom: 2rem;">
+    <a href="https://scriptschool.org/courses/tv-pilot-lab/" class="pill-link" target="_blank">📺 TV Pilot Lab</a>
+    <a href="https://scriptschool.org/courses/horror-movie-screenplay-writing/" class="pill-link" target="_blank">🔪 Horror Screenwriting</a>
+    <a href="https://scriptschool.org/courses/" class="pill-link" target="_blank">🎥 Feature Film Writing</a>
+    <a href="https://scriptschool.org/courses/how-to-raise-money-for-your-first-movie/" class="pill-link" target="_blank">💰 Raise Money for Film</a>
+    <a href="https://scriptschool.org/courses/casting-director-workshop/" class="pill-link" target="_blank">🎭 Casting Workshop</a>
+    <a href="https://scriptschool.org/private-consultations/" class="pill-link" target="_blank">📝 Private Script Consultation</a>
+    <a href="https://scriptschool.org/about-us/" class="pill-link" target="_blank">🎓 Screenplay Mentorship</a>
+    <a href="https://scriptschool.org/youth-programs/" class="pill-link" target="_blank">🧑‍🎬 Youth Filmmaking</a>
+    <a href="https://scriptschool.org/are-screenwriters-in-high-demand/" class="pill-link" target="_blank">📈 Screenwriter Demand</a>
+    <a href="https://scriptschool.org/what-are-the-3-cs-of-screenwriting/" class="pill-link" target="_blank">✍️ 3 C's of Screenwriting</a>
+  </div>
+
+  <!-- Blog/resource inline preview "Are Screenwriters in High Demand?" etc already integrated but keep harmony -->
+  
+  <!-- Full Article + embedded from your copy -->
+  <div class="article-wrap">
+    <h2>The 7 Biggest Mistakes New Screenwriters Make (And How Professional Training Helps You Avoid Them)</h2>
+    <p>Every screenwriter begins with excitement. A great idea. A memorable character. A scene that plays perfectly in your imagination. For a few days—or even weeks—the writing feels effortless. Then reality sets in. The story becomes difficult to manage. Characters stop behaving the way you expected. The middle of the script feels flat. Dialogue sounds forced. Progress slows down.</p>
+    <p>Eventually, many writers reach a frustrating conclusion: <em>"Maybe I'm just not good enough."</em> The truth is that most aspiring screenwriters aren't struggling because they lack talent. They're struggling because screenwriting is a professional craft with professional techniques—and very few people are taught those techniques properly. Just as filmmakers study directing, editors study pacing, and cinematographers study composition, screenwriters must learn the underlying principles that make stories work.</p>
+    <p>The good news? Most screenwriting problems are completely fixable. And once you understand the common mistakes new writers make, you can avoid years of frustration and dramatically accelerate your growth. In this guide, we'll explore the seven biggest mistakes aspiring screenwriters make and how structured training, mentorship, and feedback can help transform your writing from promising to professional.</p>
+
+    <h3>Mistake #1: Starting Without Understanding Story Structure</h3>
+    <p>One of the most common mistakes new writers make is jumping directly into writing without understanding how stories are constructed. Without structure, stories often lose momentum, feel directionless, and lack emotional payoff. Professional screenwriters understand that structure isn't a restriction—it's a framework. Foundational programs like <a href="https://scriptschool.org/courses/" target="_blank">Screenwriting 101</a> focus heavily on storytelling architecture.</p>
+
+    <h3>Mistake #2: Creating Characters Without Clear Goals</h3>
+    <p>Audiences don't connect with characters simply because they are detailed. Audiences connect with characters who want something. A strong protagonist should desire something meaningful, face obstacles, make difficult decisions, and experience growth. Without a clear objective, scenes often feel passive.</p>
+
+    <h3>Mistake #3: Writing Dialogue That Sounds Like Dialogue</h3>
+    <p>Realistic conversation and effective screenplay dialogue are not the same thing. Strong screenplay dialogue is purposeful. It reveals character, conflict, motivation, and subtext. Mentorship and feedback help identify dialogue that feels unnatural or overly explanatory.</p>
+
+    <h3>Mistake #4: Ignoring Genre Expectations</h3>
+    <p>Successful screenwriters understand audience expectations. Every genre has its own storytelling language. Horror writers benefit from understanding suspense building, fear escalation, and psychological tension. <a href="https://scriptschool.org/courses/horror-movie-screenplay-writing/" target="_blank">Horror Movie Screenplay Writing</a> teaches these techniques.</p>
+
+    <h3>Mistake #5: Rewriting Without a Process</h3>
+    <p>Professional screenwriters revise systematically evaluating structure, character arcs, dialogue, pacing. Rather than randomly editing pages, they identify specific problems. Structured learning helps writers analyze work objectively.</p>
+
+    <h3>Mistake #6: Working Entirely Alone</h3>
+    <p>Professional screenwriting is highly collaborative. Constructive feedback solves blind spots. A strong creative community dramatically accelerates growth. At Script School, students learn alongside peers and mentors.</p>
+
+    <h3>Mistake #7: Trying to Learn Everything Through Trial and Error</h3>
+    <p>Professional guidance shortens the learning curve. Mentorship helps writers avoid common mistakes and apply storytelling principles correctly. The goal is to make experimentation more productive.</p>
+
+    <p><strong>Why Structured Screenwriting Education Works</strong><br>Most professional writers have systems: story structure, character development, dialogue techniques, revision methods. At Script School, students gain proven storytelling frameworks applied to every project.</p>
+    <p><strong>The Role of Mentorship</strong><br>Mentors provide personalized guidance to examine specific screenplays. Many writers spend months solving issues that an experienced mentor could identify within minutes.</p>
+    <p><strong>Ready to Take Your Screenwriting Seriously?</strong> Whether you're writing your first screenplay, developing a television pilot, or seeking mentorship — explore the full range of courses and training programs through <a href="https://scriptschool.org/" target="_blank">Script School</a> and take the next step.</p>
+
+    <div class="section-title" style="margin-top: 2rem; font-size: 1.5rem;">Frequently Asked Questions</div>
+    <div class="faq-grid">
+      <div class="faq-item"><strong>What is the most common mistake new screenwriters make?</strong> Beginning without understanding story structure. Strong structure serves as foundation.</div>
+      <div class="faq-item"><strong>Can screenwriting be taught?</strong> Yes — techniques like structure, dialogue, pacing can be taught and improved through practice.</div>
+      <div class="faq-item"><strong>Why do so many writers struggle to finish screenplays?</strong> Lack of clear process, accountability, and feedback. Structured training solves this.</div>
+      <div class="faq-item"><strong>What is Screenwriting 101?</strong> Foundational course teaching structure, character, dialogue, formatting, and conflict.</div>
+      <div class="faq-item"><strong>How important is mentorship?</strong> Accelerates growth via personalized feedback, industry insight, avoiding common pitfalls.</div>
+      <div class="faq-item"><strong>Should I specialize in a genre?</strong> Understanding genre conventions helps create stronger scripts and meet audience expectations.</div>
+      <div class="faq-item"><strong>What's the fastest way to improve?</strong> Structured education + mentorship + consistent writing + constructive feedback + revision.</div>
+      <div class="faq-item"><strong>Where can I learn more?</strong> Explore <a href="https://scriptschool.org/courses/" target="_blank">Script School courses</a> to find a path for your goals.</div>
+    </div>
+  </div>
+
+  <!-- Contact + Map Section -->
+  <div class="section-title">Connect & visit us</div>
+  <div class="contact-row">
+    <div class="contact-info">
+      <p>📍 <strong>Address:</strong> 5900 Balcones Dr Suit 100, Austin, TX 78731, United States</p>
+      <p>📞 <strong>Phone:</strong> <a href="tel:+15126125230" style="color:#1f2937; text-decoration: none;">+1 (512) 612-5230</a></p>
+      <p>✉️ <strong>Email:</strong> <a href="mailto:contact@scriptschool.org" style="color:#1f2937; text-decoration: none;">contact@scriptschool.org</a></p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/scriptschoolUS" class="social-icon" target="_blank" rel="noopener">📘 Facebook</a>
+        <a href="https://www.instagram.com/script_school" class="social-icon" target="_blank" rel="noopener">📸 Instagram</a>
+        <a href="https://x.com/script_school" class="social-icon" target="_blank" rel="noopener">🐦 X (Twitter)</a>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13773.321545718049!2d-97.754955!3d30.341559000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bf2835640855%3A0xaa6dfd5f7f6ebc04!2sScript%20School!5e0!3m2!1sen!2sbd!4v1780220467395!5m2!1sen!2sbd" width="600" height="450" style="border:0; width:100%; height:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  <!-- Extra resources: Youth programs & blog posts direct embedded -->
+  <div class="links-grid" style="justify-content: center; margin: 1.5rem 0 1rem;">
+    <a href="https://scriptschool.org/are-screenwriters-in-high-demand/" class="pill-link" target="_blank">🎯 Are Screenwriters in High Demand?</a>
+    <a href="https://scriptschool.org/what-are-the-3-cs-of-screenwriting/" class="pill-link" target="_blank">📖 What Are the 3 C’s of Screenwriting?</a>
+    <a href="https://scriptschool.org/youth-programs/" class="pill-link" target="_blank">🌟 Youth Filmmaking Programs</a>
+    <a href="https://scriptschool.org/private-consultations/" class="pill-link" target="_blank">🎬 Creative Coaching</a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Script School — Modern screenwriting & film mentorship. All rights reserved.</p>
+    <p style="margin-top: 0.8rem;">
+      <a href="https://scriptschool.org/" style="color:#6c727f; text-decoration:none;">scriptschool.org</a> &nbsp;|&nbsp; 
+      <a href="https://www.facebook.com/scriptschoolUS" style="color:#6c727f; text-decoration:none;">Facebook</a> &nbsp;|&nbsp;
+      <a href="https://www.instagram.com/script_school" style="color:#6c727f; text-decoration:none;">Instagram</a> &nbsp;|&nbsp;
+      <a href="https://x.com/script_school" style="color:#6c727f; text-decoration:none;">X</a>
+    </p>
+    <p>📍 Austin, Texas — +1 (512) 612-5230 — contact@scriptschool.org</p>
+  </div>
+</footer>
+</body>
+</html>
